@@ -1,0 +1,6 @@
+race = BiasType.create!(name: "Race")
+religion = BiasType.create!(name: "Religion")
+sexual_orientation = BiasType.create!(name: "Sexual Orientation")
+ethnicity = BiasType.create!(name: "Ethnicity/National Origin")
+disability = BiasType.create!(name: "Disability")
+multiple_bias = BiasType.create!(name: "Multiple Bias")

@@ -1,0 +1,17 @@
+%table
+  %thead
+    %tr
+      %th Bias Motivation
+      %th Total Crimes
+      %th Percentage of Hate Crimes
+  %tbody
+    - @bias_types.each do |bias_type|
+      %tr
+        %td
+          = bias_type.name
+        %td
+          = bias_type.total_incidents
+        %td
+          = bias_type.percentage
+
+
