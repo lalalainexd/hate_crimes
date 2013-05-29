@@ -8,10 +8,10 @@
     - @bias_types.each do |bias_type|
       %tr
         %td
-          = bias_type.name
+          = link_to bias_type.name, bias_type
         %td
           = bias_type.total_incidents
         %td
-          = bias_type.percentage
+          = bias_type.percentage_incidents
 
 
