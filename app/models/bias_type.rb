@@ -1,15 +1,11 @@
 class BiasType < ActiveRecord::Base
 
-  has_many :biases, class_name: "Bias"
+  has_many :biases
 
   attr_accessible :name
 
   def total_incidents
     biases.sum(:total_incidents)
-  end
-
-  def percentage_incidents
-    (total_incidents.to_f/Bias.sum(:total_incidents).to_f) * 100
   end
 
   def to_param

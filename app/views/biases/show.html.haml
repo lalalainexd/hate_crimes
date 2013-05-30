@@ -1,0 +1,5 @@
+%h1
+  =@bias.name
+%ul
+  - @bias.offense_types.each do |offense_type|
+    %li #{offense_type.name}: @bias.total_incidents_by(offense_type.name)
