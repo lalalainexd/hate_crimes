@@ -11,34 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130530202838) do
-
-  create_table "bias_offense_types", :force => true do |t|
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
-    t.integer  "bias_id"
-    t.integer  "offense_type_id"
-    t.integer  "total_incidents"
-  end
-
-  create_table "bias_types", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.string   "name",       :null => false
-  end
+ActiveRecord::Schema.define(:version => 20130530210843) do
 
   create_table "biases", :force => true do |t|
-    t.string   "name",            :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.string   "name",         :null => false
     t.integer  "bias_type_id"
-    t.integer  "total_incidents"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
-  end
-
-  create_table "offense_types", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.string   "name",       :null => false
   end
 
   create_table "offenses", :force => true do |t|
@@ -46,6 +25,14 @@ ActiveRecord::Schema.define(:version => 20130530202838) do
     t.datetime "updated_at",      :null => false
     t.string   "name",            :null => false
     t.integer  "offense_type_id"
+  end
+
+  create_table "victim_counts", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "total",      :null => false
+    t.integer  "bias_id"
+    t.integer  "offense_id"
   end
 
 end

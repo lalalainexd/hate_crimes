@@ -1,16 +1,9 @@
 class Bias < ActiveRecord::Base
-  belongs_to :bias_type
-  has_many :bias_offense_types
-  has_many :offense_types, through: :bias_offense_types
 
-  attr_accessible :name, :total_incidents
+  attr_accessible :name
 
-  def to_param
-    name
-  end
+  belongs_to :bias_type, class_name: "Bias"
+  has_many :sub_types, class_name: "Bias", foreign_key: "bias_type_id"
 
-  def self.find(name)
-    where(name: name).first
-  end
 
 end
