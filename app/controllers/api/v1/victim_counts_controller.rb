@@ -4,9 +4,12 @@ class Api::V1::VictimCountsController < ApplicationController
 
   def index
 
+    if params[:bias]
+      @victim_counts = VictimCount.joins(:bias).where(biases: {name: params[:bias]})
+    else
     @victim_counts = VictimCount.all
+    end
 
-    #raise @victim_counts.inspect
     respond_with @victim_counts, root: false
 
 
