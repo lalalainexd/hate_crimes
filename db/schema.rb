@@ -13,26 +13,38 @@
 
 ActiveRecord::Schema.define(:version => 20130530210843) do
 
+  create_table "bias_categories", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "name",       :null => false
+  end
+
   create_table "biases", :force => true do |t|
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-    t.string   "name",         :null => false
-    t.integer  "bias_type_id"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "name",               :null => false
+    t.integer  "bias_categories_id"
+  end
+
+  create_table "offense_categories", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "name",       :null => false
   end
 
   create_table "offenses", :force => true do |t|
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
-    t.string   "name",            :null => false
-    t.integer  "offense_type_id"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+    t.string   "name",                :null => false
+    t.integer  "offense_category_id"
   end
 
   create_table "victim_counts", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "total",      :null => false
-    t.integer  "bias_id"
-    t.integer  "offense_id"
+    t.integer  "bias_id",    :null => false
+    t.integer  "offense_id", :null => false
   end
 
 end
