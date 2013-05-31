@@ -1,0 +1,13 @@
+%table
+  %thead
+    %tr
+      %th Bias Motivation
+      %th Total Crimes
+  %tbody
+    - @offenses.each do |offense|
+      %tr
+        %td
+          = link_to offense.name, offense
+        %td
+          = offense.total_victims
+

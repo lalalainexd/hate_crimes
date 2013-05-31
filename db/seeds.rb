@@ -18,7 +18,7 @@ personal_offense.sub_types.create!(name:"other")
 white_bias = race.sub_types.create!(name: "anti white")
 race.sub_types.create!(name: "anti black")
 race.sub_types.create!(name: "anti american indian or alaskan native")
-race.sub_types.create!(name: "anti asian pacific islander", total_incidents: 137)
+race.sub_types.create!(name: "anti asian pacific islander")
 race.sub_types.create!(name: "anti multiple races")
 
 religion.sub_types.create!(name: "anti jewish")
