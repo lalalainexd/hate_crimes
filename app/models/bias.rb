@@ -1,6 +1,6 @@
 class Bias < ActiveRecord::Base
 
-  attr_accessible :name
+  attr_accessible :name, :bias_category
 
   belongs_to :bias_category
 

@@ -2,7 +2,7 @@ class VictimCount < ActiveRecord::Base
   belongs_to :bias
   belongs_to :offense
 
-  attr_accessible :total, :bias_id, :offense_id
+  attr_accessible :total, :bias_id, :offense_id, :bias, :offense
 
   def self.filter_by_bias(biases)
     joins(:bias).where(biases: {name: biases})
