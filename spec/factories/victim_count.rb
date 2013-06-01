@@ -11,4 +11,12 @@ FactoryGirl.define do
     association :offense, name: "pulled tail"
 
   end
+
+  factory :victim_with_fish_bias, class: "VictimCount" do
+    total 1
+    association :bias, name: "bloop"
+    association :offense, name: "dropped on floor"
+
+  end
+
 end
