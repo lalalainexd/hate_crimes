@@ -7,6 +7,7 @@ HateMap::Application.routes.draw do
   namespace :api, defaults: {format: 'json'} do
     scope module: :v1, constraints: Router::ApiConstraints.new(version: 1, default: true) do
       resources :victim_counts, only: [:index]
+      resources :biases, only: [:index]
     end
   end
 
