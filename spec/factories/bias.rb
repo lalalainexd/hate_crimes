@@ -4,14 +4,18 @@ FactoryGirl.define do
   end
 
   factory :turtle_bias, class: "Bias" do
-    name "turtle"
+    name "turtles"
+    association :bias_category, name: "land"
   end
 
   factory :cat_bias, class: "Bias" do
-    name "cat"
+    name "cats"
+    association :bias_category, name: "land"
   end
 
-  factory :goat_bias, class: "Bias" do
-    name "goat"
+  factory :fish_bias, class: "Bias" do
+    name "fish"
+    association :bias_category, name: "water"
   end
+
 end

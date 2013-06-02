@@ -6,5 +6,10 @@ class Bias < ActiveRecord::Base
 
   has_many :victim_counts
 
+  def self.filter_by category
+  joins(:bias_category).where(bias_categories: {name: category})
+
+  end
+
 
 end
