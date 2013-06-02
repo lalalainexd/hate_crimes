@@ -6,6 +6,7 @@ HateMap::Application.routes.draw do
       resources :victim_counts, only: [:index]
       resources :biases, only: [:index]
       resources :bias_categories, only: [:index]
+      resources :offenses, only: [:index]
     end
   end
 
