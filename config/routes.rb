@@ -5,7 +5,7 @@ HateMap::Application.routes.draw do
     scope module: :v1, constraints: Router::ApiConstraints.new(version: 1, default: true) do
       resources :victim_counts, only: [:index]
       resources :biases, only: [:index]
-      resources :bias_categories, only: [:index, :show]
+      resources :bias_categories, only: [:index]
     end
   end
 
